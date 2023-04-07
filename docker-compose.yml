@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    image: python:3.10
+    container_name: agenda_api
+    volumes:
+      - .:/root/application
+    working_dir: /root/application
+    ports:
+      - 5001:5000
+    command: tail -f /dev/null
+  db:
+    image: postgres:latest
+    container_name: agenda_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_ROOT_PASSWORD=123456
+    ports:
+      - "5433:5432"
