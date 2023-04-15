@@ -14,6 +14,7 @@ services:
     image: postgres:latest
     container_name: agenda_db
     environment:
+      - POSTGRES_DB=agenda
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123456
       - POSTGRES_ROOT_PASSWORD=123456
